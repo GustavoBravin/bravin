@@ -7,7 +7,11 @@ this.preco = preco;
 }
 
 Mostrar_produtos(){
- return this.nome + this.cadastro + this.descricao + this.preco
+    return `<div>${this.nome}</div> 
+    <div>${this.cadastro}</div> 
+    <div>${this.descricao}</div> 
+    <div>${this.preco}</div> `
+    
 }
 
 }
@@ -23,8 +27,11 @@ Mostrar_produtos_destaque(){
 }
 
 }
-let produto = new Produto("Garrafa","Bravin","carrega liquidos",30)
+let produto = new Produto("Garrafa","GBravin","carrega liquidos",30)
 console.log(produto.Mostrar_produtos())
  
-let produtodestaque = new ProdutoDestaque("Garrafa","Bravin","carrega liquidos",30,"www.imagem.com")
+let produtodestaque = new ProdutoDestaque("Garrafa "," Bravin"," carrega liquidos ", 30," www.imagem.com")
 console.log(produtodestaque.Mostrar_produtos_destaque())
+
+const div = document.getElementById("destaque")
+div.insertAdjacentHTML("afterbegin", produto.Mostrar_produtos)
